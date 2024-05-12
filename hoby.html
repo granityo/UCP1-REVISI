@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDW KELAS B_2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/hobi.css" />
+    <style>
+      /* Custom CSS for this page */
+      h1 {
+        font-size: 40px;
+        padding-top: 100px;
+        text-align: center;
+      }
+
+      .circle-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+      }
+
+      .circle {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: rgb(66, 74, 77);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        margin: 20px;
+        transition: transform 0.3s ease;
+        overflow: hidden; /* agar gambar tidak keluar dari lingkaran */
+        position: relative; /* agar posisi paragraf relatif terhadap lingkaran */
+      }
+
+      .circle:hover {
+        transform: scale(1.1);
+      }
+
+      .circle img {
+        width: 100%; /* agar gambar terisi di dalam lingkaran */
+        height: 100%;
+        object-fit: cover; /* agar gambar terisi penuh di dalam lingkaran */
+      }
+
+      .circle p {
+        position: absolute;
+        bottom: 10px; /* jarak paragraf dari bawah */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="teks-nav" href="index.html">PRAKTIKUM PDW</a>
+      <a href="index.html" id="nav-work" class="nav-link active"> Home </a>
+      <div class="dropdown">
+        <a href="#" id="nav-tugas" class="nav-link">
+          About Me <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="film.html">my drakor favorite</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" id="nav-tugas" class="nav-link">
+          My Hobby <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="waktu.html">A day In My life</a>
+          <a href="hoby.html">Hobby</a>
+        </div>
+      </div>
+    </header>
+
+    <h1>MY HOBBIES</h1>
+    <script>
+      window.onload = function () {
+        var circles = document.getElementsByClassName("circle");
+
+        for (var i = 0; i < circles.length; i++) {
+          circles[i].addEventListener("click", function () {
+            this.classList.add("animate");
+            var circle = this;
+            setTimeout(function () {
+              circle.classList.remove("animate");
+            }, 1000);
+          });
+        }
+      };
+    </script>
+    <div class="circle-container">
+      <div class="circle">
+        <img
+          src="https://i.pinimg.com/originals/49/b2/be/49b2be73fc1d6c0343c7bf0c6d138871.jpg"
+          alt="Nonton"
+        />
+        <p>Game</p>
+      </div>
+      <div class="circle">
+        <img
+          src="https://i.pinimg.com/originals/7c/f2/9d/7cf29d3079f7fe0195342878ae78fe33.jpg"
+          alt="game"
+        />
+        <p>nonton</p>
+      </div>
+      <div class="circle">
+        <img
+          src="https://i.pinimg.com/originals/90/6a/5e/906a5e40cf53d97f06ac808240f99e03.jpg"
+          alt=""
+        />
+        <p>gym</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container-footer">
+        <p>Pengembangan Desain Web - 2024 - kelas B</p>
+        https://i.pinimg.com/originals/49/b2/be/49b2be73fc1d6c0343c7bf0c6d138871.jpg
+        <div class="social-icons">
+          <a href="https://www.instagram.com/akun_instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/akun_linkedin"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/akun_github"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

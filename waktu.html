@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDW KELAS B_2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/waktu.css" />
+    <style>
+      /* Custom CSS for this page */
+      .greetings {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .carousel-container {
+        width: 120%;
+        margin: 20px auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .card {
+        flex: 0 0 33.33%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .card img {
+        width: 321%; /* Ubah ukuran gambar sesuai kebutuhan */
+        height: auto;
+        object-fit: cover; /* Memastikan gambar terisi penuh di dalam card */
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(248, 241, 241); /* Warna ikon */
+      }
+
+      .prev {
+        left: 0px; /* Jarak dari kiri */
+      }
+
+      .next {
+        right: 0px; /* Jarak dari kanan */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a class="teks-nav" href="index.html">PRAKTIKUM PDW</a>
+      <a href="index.html" id="nav-work" class="nav-link active"> Home </a>
+      <div class="dropdown">
+        <a href="#" id="nav-tugas" class="nav-link">
+          About Me <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="film.html">my drakor favorite</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" id="nav-tugas" class="nav-link">
+          My Hobby <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="waktu.html">A day In My life</a>
+          <a href="hoby.html">Hobby</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="container">
+        <div class="text">
+          <p class="greetings" id="greetings"></p>
+          <p id="current-date"></p>
+          <p id="current-time"></p>
+          <div class="carousel-container">
+            <buttonC class="prev" onclick="prevSlide()">&#10094;</buttonC>
+            <div class="carousel">
+              <div class="card">
+                <img
+                  src="https://i.pinimg.com/474x/c8/ec/b5/c8ecb5e968319b9199d1615c605a64e6.jpg"
+                  alt="Image 1"
+                />
+              </div>
+              <div class="card">
+                <img
+                  src="https://i.pinimg.com/474x/e7/dc/71/e7dc715e0672585bc7b8cd65dbe0e86a.jpg"
+                  alt="Image 2"
+                />
+              </div>
+              <div class="card">
+                <img
+                  src="https://i.pinimg.com/474x/ca/c1/d8/cac1d883c9e4ff2254b4d9e260893955.jpg"
+                  alt="Image 3"
+                />
+              </div>
+            </div>
+            <buttonC class="next" onclick="nextSlide()">&#10095;</buttonC>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container-footer">
+        <p>Pengembangan Desain Web - 2024 - kelas B</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/akun_instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/akun_linkedin"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/akun_github"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // JavaScript for real-time greetings and current time
+      function updateGreetings() {
+        var today = new Date();
+        var currentHour = today.getHours();
+        var greetingsElement = document.getElementById("greetings");
+        var currentDateElement = document.getElementById("current-date");
+        var currentTimeElement = document.getElementById("current-time");
+        var greetings = "";
+        var days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        var months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        var day = days[today.getDay()];
+        var date = today.getDate();
+        var month = months[today.getMonth()];
+        var year = today.getFullYear();
+
+        var currentDate = day + ", " + date + " " + month + " " + year;
+
+        if (currentHour < 12) {
+          greetings = "Hai Selamat Pagi! sayang ☀️";
+        } else if (currentHour < 18) {
+          greetings = "Hai Selamat Siang! sayang🌤️";
+        } else if (currentHour < 20) {
+          greetings = "Hai Selamat Sore! sayang🌥️";
+        } else {
+          greetings = "Hai Selamat Malam! sayang🌑";
+        }
+
+        greetingsElement.innerText = greetings;
+        currentDateElement.innerText = currentDate;
+        currentTimeElement.innerText =
+          "Waktu Sekarang: " + today.toLocaleTimeString();
+      }
+
+      updateGreetings();
+      setInterval(updateGreetings, 1000);
+
+      // JavaScript for carousel
+      var slideIndex = 0;
+
+      function showSlide() {
+        var slides = document.querySelectorAll(".card");
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        } else if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+      }
+
+      function nextSlide() {
+        slideIndex++;
+        showSlide();
+      }
+
+      function prevSlide() {
+        slideIndex--;
+        showSlide();
+      }
+
+      showSlide();
+    </script>
+  </body>
+</html>
